@@ -8,10 +8,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/members")
@@ -23,9 +20,14 @@ public class MemberController {
     // 회원 생성: POST /members
     @PostMapping
     public ResponseEntity<MemberResponseDTO> createMember(@RequestBody @Valid CreateMemberRequestDTO request) {
-        MemberResponseDTO newMember = memberService.createMember(request);
-        return ResponseEntity.status(HttpStatus.CREATED).body(newMember);
+        MemberResponseDTO Member = memberService.createMember(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(Member);
     }
 
     // 회원 조회
+    @GetMapping("/{member_id}")
+    public ResponseEntity<MemberResponseDTO> getMember(@PathVariable("member_id") Long member_id) {
+        MemberResponseDTO Member = memberService.getMember(member_id);
+        return ResponseEntity.status(HttpStatus.OK).body(Member);
+    }
 }
