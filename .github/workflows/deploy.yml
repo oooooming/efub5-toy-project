@@ -6,7 +6,6 @@ on:
 
 env:
   AWS_REGION: ap-northeast-2
-  S3_BUCKET_NAME: {S3 버킷명}
   CODE_DEPLOY_APPLICATION_NAME: efub-twitter-codedeploy-app
   CODE_DEPLOY_DEPLOYMENT_GROUP_NAME: efub-twitter-codedeploy-development-group
 
