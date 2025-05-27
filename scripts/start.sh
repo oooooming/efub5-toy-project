@@ -1,4 +1,4 @@
-#!/usr/bin/env bashPROJECT_ROOT="/home/ubuntu/twitter"
+#!/usr/bin/env bashPROJECT_ROOT="/home/ubuntu/efub5-toy-project"
 JAR_FILE="$PROJECT_ROOT/blog-webapp.jar"
 
 APP_LOG="$PROJECT_ROOT/application.log"
