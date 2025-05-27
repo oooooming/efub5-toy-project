@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 PROJECT_ROOT="/home/ubuntu/efub5-toy-project"
-JAR_FILE="$PROJECT_ROOT/blog-webapp.jar"
+JAR_FILE=$(ls $PROJECT_ROOT/build/libs/*.jar | head -n 1)
 
 DEPLOY_LOG="$PROJECT_ROOT/deploy.log"
 
